@@ -4,6 +4,7 @@
   "description": "Simple Q&A website.",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error : Test command undefined.\" && exit 1"
   },
   "repository": {
