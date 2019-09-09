@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <% include partials/header.ejs %>
+        <title>Login</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div class="card card-signin my-5">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">User Regestration</h5>
+                            <form class="form-signup" method="POST" action="/user/register">
+                                <div class="form-label-group">
+                                    <label for="inputName">Name</label>
+                                    <input name="name" type="text" id="inputName" class="form-control" placeholder="Name" required autofocus>
+                                </div>
+                
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                </div>
+                
+                                <div class="form-label-group">
+                                    <label for="inputConact">Contact</label>
+                                    <input name="contact" type="text" id="inputConact" pattern="^\d{10}$" class="form-control" placeholder="Contact" required >
+                                </div>
+                                <hr>
+                                <div class="form-label-group">
+                                    <label for="inputUsername">Username</label>
+                                    <input name="username" type="text" id="inputUsername" class="form-control" placeholder="Username" required>
+                                </div>
+
+                                <div class="form-label-group">
+                                    <label for="inputPassword">Password</label>  
+                                    <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                                </div>
+
+                                <div class="form-label-group">
+                                    <label for="inputPassword2">Repeat Password</label>  
+                                    <input name="password2" type="password" id="inputPassword2" class="form-control" placeholder="Repeat Password" required>
+                                </div>
+                                <hr>
+                                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <% include partials/footer.ejs %>
+    </body>
+</html>
