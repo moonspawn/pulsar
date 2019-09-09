@@ -57,6 +57,17 @@ app.get('/', function(req, res) {
     res.render('login')
 })
 
+app.get('/signup', function(req, res) {
+    res.render('signup')
+})
+
+app.post('/register', function(req, res) {
+    const username = req.body.username;
+    const password = req.body.password;
+
+    // INSERT INTO user (username, password, email, name_first, name_last, contact) VALUES ( "shubham" , "qazwsxedcrfvt" , "shubhampednekar1999@gmail.com" , "shubham" , "pednekar" , 9920991399 );
+    let db = new sqlite3.Database('./db/authentic.db');
+})
 
 
 const PORT = process.env.port || 8080;
