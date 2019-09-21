@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/stylesheets/home.css" type="text/css">
+    <% include partials/header.ejs %>
+    <title>Document</title>
+</head>
+<body>
+    <div class="grid-container">
+        <!--Navbar-->
+        <div class="header">
+            <% include partials/search.ejs %>
+        </div>
+        <!--/.Navbar-->
+        <div class="questions">
+            <a class="btn btn-primary float-right ml-auto" href="/askquestion" role="button">Ask Question</a>
+            <% questions.forEach((question) => { %>
+                <div class="card bg-light w-100">
+                    <div class="card-body">
+                        <p class="card-text"><%= question.question%></p>
+                        <span class="badge badge-secondary"><%= question.tags %></span><br>
+                        <button type="button" class="btn btn-primary btn-sm float-right">Small button</button>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+        
+
+        <div class="ask">
+            
+        </div>
+
+        <div class="item2">Menu</div>    
+        
+        <div class="item5">Footer</div>
+    </div>
+
+    <% include partials/footer.ejs %>
+</body>
+</html>
