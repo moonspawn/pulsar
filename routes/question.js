@@ -1,29 +1,21 @@
 const sqlite3 = require('sqlite3').verbose();
+let db = new sqlite3.Database('./db/authentic.db');
 
-module.exports = function(req, res) {
+module.exports = async function(req, res) {
 
-    let db = new sqlite3.Database('./db/authentic.db');
+    const question = req.params.ques;
 
-    let threadid, tags, upvotes, downvotes;
-    
-    const question = req.params.ques
-
-    db.get(`SELECT * FROM threads WHERE question = "${question}"` , (err, row) => {
-        console.log(row)
-        threadid = row.threadid;
-        tags = row.tags;
-        upvotes = row.upvotes;
-        downvotes = row.downvotes;
-        console.log(upvotes)
-        db.close()
+    sql = `SELECT * FROM threads WHERE question = "${question}"`
+    await db.get(sql, (err, row) => {
+        assign(row)
     })
 
-
-    
-    res.render('thread',{id: threadid,
-                        question: question,
-                        username: req.session.username,
-                        tags: tags,
-                        upvotes: upvotes,
-                        downvotes: downvotes});
+    function assign(row)   {
+        jason = {"question": question,
+                "username": req.session.username,
+                "tags": row.tags,
+                "upvotes": row.upvotes,
+                "downvotes": row.downvotes}
+        res.render('thread', jason);
+    }   
 }

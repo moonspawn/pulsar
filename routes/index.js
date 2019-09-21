@@ -26,11 +26,9 @@ router.get('/askquestion', function(req, res) {
     res.render('createThread')
 })
 
+
 router.post('/:ques/confirm', addques)
 
-
 router.post('/:ques', ques)
-
-
 
 module.exports = router
