@@ -13,6 +13,7 @@ module.exports = function(req, res) {
     db.get('SELECT threadid FROM threads ORDER BY threadid DESC LIMIT 1', (err, id) =>  {
         if(id)  {
             threadid = parseInt(id.threadid)+1
+            console.log(id)
         }
         else {
             threadid = 1
@@ -31,12 +32,6 @@ module.exports = function(req, res) {
         console.log(req.body.downvotes)
     }
 
-
-    res.render('thread',{id: threadid,
-                        question: question,
-                        username: req.session.username,
-                        tags: tags,
-                        upvotes: 0,
-                        downvotes: 0});
+    res.render('confirm')
     
 }

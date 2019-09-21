@@ -16,7 +16,11 @@
 }
 
 .grid-container > div {
-  text-align: center;
   padding: 10px 0;
-  border: 1px solid #000000;
 }
+
+.card  {
+  margin: 10px;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+}
+

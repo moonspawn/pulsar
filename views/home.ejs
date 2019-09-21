@@ -16,21 +16,13 @@
         </div>
         <!--/.Navbar-->
         <div class="questions">
+            <a class="btn btn-primary float-right ml-auto" href="/askquestion" role="button">Ask Question</a>
             <% questions.forEach((question) => { %>
-                <div class="card">
+                <div class="card bg-light w-100">
                     <div class="card-body">
-                        <blockquote class="blockquote mb-0">
-                        <p><%= question.question %></p><p id='id'>
-                        <div class='row'>
-                            <h5 class='col-md-0'><%= question.upvotes %></h5>
-                            <span class="upvote"> </span>
-                        </div>
-                        <div class='row'>
-                            <h5 class='col-md-0'><%= question.downvotes %></h5>
-                            <span class="downvote"> </span>
-                        </div>
-                       
-                        </blockquote>
+                        <p class="card-text"><%= question.question%></p>
+                        <span class="badge badge-secondary"><%= question.tags %></span><br>
+                        <button type="button" class="btn btn-primary btn-sm float-right">Small button</button>
                     </div>
                 </div>
             <% }) %>
@@ -38,7 +30,7 @@
         
 
         <div class="ask">
-            <a class="btn btn-primary" href="/askquestion" role="button">Ask Question</a>
+            
         </div>
 
         <div class="item2">Menu</div>    

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <% include partials/header.ejs %>
+    <link rel="stylesheet" href="/stylesheets/createThread.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
     <title>Document</title>
@@ -12,22 +13,25 @@
 <body>
     
     
+    <div class="container">
+        <form id='f' name='quesdetails' method="POST" action = '' >
+
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">write your question here</label>
+                <textarea name="question" class="form-control" id="exampleFormControlTextarea1" rows="6" ></textarea>
+            </div><br>
     
-    <form id='f' name='quesdetails' method="POST" action = '/' >
-
-        <div class="form-group">
-            <label for="exampleFormControlTextarea1">write your question here</label>
-            <textarea name="question" class="form-control" id="exampleFormControlTextarea1" rows="3" ></textarea>
-        </div>
-
-        <div class="form-group">
-            <input name="tags" type="text" value="" data-role="tagsinput"></input>
-        </div>
-
+            <div class="form-group">
+                <label for="tags">please add tags related to question</label><br>
+                <input name="tags" id="tags" type="text" value="" data-role="tagsinput"></input>
+            </div>
+    
+            
+            <button class="btn btn-primary text-uppercase btn-sm" type="submit">Post</button>
+        </form>
         
-        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Post</button>
-    </form>
-
+    </div>
+    
     <script src="/js/createThread.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="http://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
