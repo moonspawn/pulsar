@@ -9,27 +9,41 @@
     <title>Document</title>
 </head>
 <body>
-        <div class="card">
-            <div class="card-header">
-                Question
+    <div class="grid-container">
+
+        <!--Navbar-->
+        <div class="header">
+            <% include partials/search.ejs %>
+        </div>
+        <!--/.Navbar-->
+        <div class="main">
+            <div class="card">
+                    <div class="card-header">
+                        Question
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                        <p id='question'><%= question %></p>
+                        <footer class="blockquote-footer"><cite title="Source Title"><%= username %></cite></footer>
+                        <div class='row'>
+                            <h5 id='upvotes' class='col-md-0'><%= upvotes %></h5>
+                            <span class="upvote"> </span>
+                        </div>
+                        <div class='row'>
+                            <h5 id='downvotes' class='col-md-0'><%= downvotes %></h5>
+                            <span class="downvote"> </span>
+                        </div>
+                        
+                        </blockquote>
+                        
+                    </div>
+                </div>  
             </div>
-            <div class="card-body">
-                <blockquote class="blockquote mb-0">
-                <p id='question'><%= question %></p>
-                <footer class="blockquote-footer"><cite title="Source Title"><%= username %></cite></footer>
-                <div class='row'>
-                    <h5 id='upvotes' class='col-md-0'><%= upvotes %></h5>
-                    <span class="upvote"> </span>
-                </div>
-                <div class='row'>
-                    <h5 id='downvotes' class='col-md-0'><%= downvotes %></h5>
-                    <span class="downvote"> </span>
-                </div>
-               
-                </blockquote>
-            </div>
-        </div>  
-    
+            <center>
+                <a href="#" class="btn btn-info" role="button">Link Button</a>
+            </center>
+        </div>
+        
     <script src="/js/thread.js"></script>
     <% include partials/footer.ejs %>
 </body>

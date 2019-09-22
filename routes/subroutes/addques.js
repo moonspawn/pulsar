@@ -14,7 +14,6 @@ module.exports = function(req, res) {
     db.get('SELECT threadid FROM threads ORDER BY threadid DESC LIMIT 1', (err, id) =>  {
         let threadid = uuid();
         db.get(`SELECT userid FROM users WHERE username = "${req.session.username}"`, (err, username) => {
-            console.log(username)
             db.run(`INSERT INTO userthread (userid, threadid) VALUES ("${username.userid}", "${threadid}")`);
             db.run(`INSERT INTO threads (threadid, question, tags, upvotes, downvotes) VALUES ( "${threadid}", "${question}" ,"${tags}", "0" , "0")`);
             res.redirect(307, `/${question}`);
