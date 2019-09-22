@@ -18,11 +18,13 @@
         <div class="questions">
             <a class="btn btn-primary float-right ml-auto" href="/askquestion" role="button">Ask Question</a>
             <% questions.forEach((question) => { %>
-                <div class="card bg-light w-100">
+                <div id="qc" class="card bg-light w-100">
                     <div class="card-body">
-                        <p class="card-text"><%= question.question%></p>
+                        <p id="question" class="card-text"><%= question.question %></p>
                         <span class="badge badge-secondary"><%= question.tags %></span><br>
-                        <button type="button" class="btn btn-primary btn-sm float-right">Small button</button>
+                        <form id="form" method="POST" action="" >
+                            <button id='view-btn' class="btn btn-primary" type='submit'>view</button>
+                        </form>
                     </div>
                 </div>
             <% }) %>
@@ -37,7 +39,7 @@
         
         <div class="item5">Footer</div>
     </div>
-
+    <script src="/js/home.js"></script>
     <% include partials/footer.ejs %>
 </body>
 </html>

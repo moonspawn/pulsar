@@ -2,11 +2,11 @@ const express = require('express')
 const router = express.Router();
 const sqlite3 = require('sqlite3').verbose();
 
-const login = require('./login');
-const register = require('./register');
-const home = require('./home');
-const addques = require('./addques');
-const ques = require('./question');
+const login = require('./subroutes/login');
+const register = require('./subroutes/register');
+const home = require('./subroutes/home');
+const addques = require('./subroutes/addques');
+const ques = require('./subroutes/question');
 
 
 router.use(express.static('../public'));
