@@ -20,7 +20,7 @@ module.exports = async function(req, res) {
                     "downvotes": row.downvotes,
                     "posts":posts}
                     console.log(jason)
-                    res.render("thread", jason)
+                    res.render("question", jason)
                 })
             })
         })

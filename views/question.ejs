@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/stylesheets/question.css" type="text/css">
+    <% include partials/header.ejs %>
+    <title>Document</title>
+</head>
+<body class="body">
+    <div class="grid-container">
+
+        <!--Navbar-->
+        <div class="header">
+            <% include partials/search.ejs %>
+        </div>
+        <!--/.Navbar-->
+        <div class="main">
+            <div class="card pl-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="votes float-left">
+                            <div class='row'>
+                                <p id='upvotes'><%= upvotes %></p>
+                                <span class="upvote ml-1 mr-3 mt-2 mb-0"> </span>
+                            </div>
+                            <div class='row'>
+                                <p id='downvotes'><%= downvotes %></p>
+                                <span class="downvote ml-1 mr-3 mt-2"> </span>
+                            </div>
+                        </div>
+                        <blockquote class="blockquote ml-3 mb-0">
+                            <p id='question'><%= question %></p>
+                            <footer class="blockquote-footer"><cite title="Source Title"><%= username %></cite></footer>
+                        </blockquote>    
+                    </div>
+                    <a id="reply" href="" class="btn btn-info float-right btn-sm" role="button">Reply</a>  
+                </div>
+            </div>
+
+            <h3>Answers</h3>
+            <div class="Answers">
+                <% if(posts) {%>
+                    <% posts.forEach((post) => { %>
+                        <div class="card pl-3">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="votes float-left">
+                                        <div class='row'>
+                                            <p id='upvotes'><%= post.post.upvotes %></p>
+                                            <span class="upvote ml-1 mr-3 mt-2 mb-0"> </span>
+                                        </div>
+                                        <div class='row'>
+                                            <p id='downvotes'><%= post.post.downvotes %></p>
+                                            <span class="downvote ml-1 mr-3 mt-2"> </span>
+                                        </div>
+                                    </div>
+                                    <blockquote class="blockquote ml-3 mb-0">
+                                        <p id='question'><%= post.post.answer %></p>
+                                        <footer class="blockquote-footer"><cite title="Source Title"></cite></footer>
+                                    </blockquote>    
+                                </div>                                
+                            </div>
+                        </div>
+
+                    <% }) %>
+                <% } else {%>
+                    <h4>No answers Yet</h4>
+                <% } %>
+            </div>
+        </div>
+    </div>
+        
+    <script src="/js/thread.js"></script>
+    <% include partials/footer.ejs %>
+</body>
+</html>

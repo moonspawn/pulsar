@@ -7,7 +7,7 @@ const register = require('./subroutes/register');
 const home = require('./subroutes/home');
 const addques = require('./subroutes/addques');
 const ques = require('./subroutes/question');
-const post = require('./subroutes/post.js')
+const post = require('./subroutes/answer')
 
 router.use(express.static('../public'));
 
@@ -24,7 +24,7 @@ router.post('/home', home);
 
 
 router.get('/askquestion', function(req, res) { 
-    res.render('createThread');
+    res.render('addQuesFE');
 })
 
 
@@ -33,7 +33,7 @@ router.post('/question/:ques', addques);
 router.get('/question/:ques', ques);
 
 router.get('/question/:ques/post', (req,res) => {
-    res.render('post')
+    res.render('answer')
 });
 
 router.post('/question/:ques/post', post);

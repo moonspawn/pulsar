@@ -1,0 +1,63 @@
+
+.body {
+  background-color: lightblue;
+}
+
+.row  {
+  display: inline;
+}
+
+.header { grid-area: header; }
+.item2 { grid-area: menu; }
+.main { grid-area: main; }
+.ask { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'main main main main main right'
+    'menu footer footer footer footer footer';
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.grid-container > div {
+  padding: 10px 0;
+}
+.card {
+  margin: 2%
+}
+.upvote {
+    display: inline-block;
+    overflow: hidden;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid gray;
+} 
+  
+  
+.upvote.on {
+  border-bottom: 10px solid black;
+}
+
+.downvote {
+  display: inline-block;
+  overflow: hidden;
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid grey;
+} 
+
+  
+.downvote.on {
+  border-top: 10px solid black
+}
+
+  
+  
