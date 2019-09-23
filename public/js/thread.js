@@ -25,3 +25,5 @@ for (const btn of document.querySelectorAll('.downvote')) {
     }
   });
 }
+
+document.getElementById("reply").href = window.location.href+ "/post"

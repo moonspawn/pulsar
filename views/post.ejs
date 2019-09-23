@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/stylesheets/post.css">
+    <% include partials/header.ejs %>
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="grid-container">
+        <!--Navbar-->
+        <div class="header">
+            <% include partials/search.ejs %>
+        </div>
+        <!--/.Navbar-->
+        <div class = "main">
+            <form id='form' name='quesdetails' method="POST" action = '' >
+
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">write your Answer here</label>
+                    <textarea name="answer" class="form-control" id="exampleFormControlTextarea1" rows="6" ></textarea>
+                </div><br>
+        
+                <button class="btn btn-primary text-uppercase btn-sm" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <% include partials/footer.ejs %>
+</body>
+</html>

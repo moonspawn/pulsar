@@ -36,10 +36,8 @@ module.exports = async function(req, res) {
 
     db.all('SELECT * FROM threads ORDER BY upvotes DESC LIMIT 10', (err, questions) => {
         if(questions)   {
+            console.log(questions)
             res.render('home', {questions: questions})
-        }
-        else    {
-            res.render('createThread')
         }
     })
 }

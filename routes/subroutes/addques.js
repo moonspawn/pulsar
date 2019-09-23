@@ -4,7 +4,6 @@ const uuid = require('uuidv4').default;
 module.exports = function(req, res) {
 
     let db = new sqlite3.Database('./db/authentic.db');
-    var threadid = null
     const question = req.params.ques
     const tags = req.body.tags
     
@@ -16,7 +15,7 @@ module.exports = function(req, res) {
         db.get(`SELECT userid FROM users WHERE username = "${req.session.username}"`, (err, username) => {
             db.run(`INSERT INTO userthread (userid, threadid) VALUES ("${username.userid}", "${threadid}")`);
             db.run(`INSERT INTO threads (threadid, question, tags, upvotes, downvotes) VALUES ( "${threadid}", "${question}" ,"${tags}", "0" , "0")`);
-            res.redirect(307, `/${question}`);
+            res.redirect(`/question/${question}`);
         })
     })
     /*

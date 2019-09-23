@@ -7,7 +7,7 @@ const register = require('./subroutes/register');
 const home = require('./subroutes/home');
 const addques = require('./subroutes/addques');
 const ques = require('./subroutes/question');
-
+const post = require('./subroutes/post.js')
 
 router.use(express.static('../public'));
 
@@ -15,20 +15,28 @@ router.get('/', login);
 
 
 router.get('/signup', function(req, res) {
-    res.render('signup')
+    res.render('signup');
 })
 
-router.post('/register', register)
+router.post('/register', register);
 
-router.post('/home', home)
+router.post('/home', home);
+
 
 router.get('/askquestion', function(req, res) { 
-    res.render('createThread')
+    res.render('createThread');
 })
 
 
-router.post('/:ques/confirm', addques)
+router.post('/question/:ques', addques);
 
-router.post('/:ques', ques)
+router.get('/question/:ques', ques);
+
+router.get('/question/:ques/post', (req,res) => {
+    res.render('post')
+});
+
+router.post('/question/:ques/post', post);
+
 
 module.exports = router

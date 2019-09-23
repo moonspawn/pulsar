@@ -8,7 +8,7 @@
     <% include partials/header.ejs %>
     <title>Document</title>
 </head>
-<body>
+<body class="body">
     <div class="grid-container">
         <!--Navbar-->
         <div class="header">
@@ -16,15 +16,12 @@
         </div>
         <!--/.Navbar-->
         <div class="questions">
-            <a class="btn btn-primary float-right ml-auto" href="/askquestion" role="button">Ask Question</a>
             <% questions.forEach((question) => { %>
-                <div id="qc" class="card bg-light w-100">
+                <div id="qc" class="card bg-light border-primary w-100 ">
                     <div class="card-body">
                         <p id="question" class="card-text"><%= question.question %></p>
                         <span class="badge badge-secondary"><%= question.tags %></span><br>
-                        <form id="form" method="POST" action="" >
-                            <button id='view-btn' class="btn btn-primary float-right" type='submit'>view</button>
-                        </form>
+                        <a id="view" href="" class="btn btn-primary float-right btn-sm" role="button">view</a>
                     </div>
                 </div>
             <% }) %>
@@ -35,9 +32,9 @@
             
         </div>
 
-        <div class="item2">Menu</div>    
+        <div class="item2"></div>    
         
-        <div class="item5">Footer</div>
+        <div class="item5"></div>
     </div>
     <script src="/js/home.js"></script>
     <% include partials/footer.ejs %>

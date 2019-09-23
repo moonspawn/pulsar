@@ -1,9 +1,13 @@
-
+.body {
+  background-color: #E1E8ED;
+  overflow:auto;
+}
 .header { grid-area: header; }
 .item2 { grid-area: menu; }
 .questions { grid-area: main; }
 .ask { grid-area: right; }
 .item5 { grid-area: footer; }
+
 
 .grid-container {
   display: grid;
@@ -13,18 +17,13 @@
     'menu footer footer footer footer footer';
   grid-gap: 10px;
   padding: 10px;
+  
 }
 
 .grid-container > div {
   padding: 10px 0;
 }
 
-.card  {
-  margin: 10px;
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
-}
-
-.navbar   {
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
-  margin: 0%;
+.card {
+  margin: 2%
 }

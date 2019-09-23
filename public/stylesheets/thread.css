@@ -1,4 +1,9 @@
 
+.body {
+  background-color: lightblue;
+}
+
+
 .header { grid-area: header; }
 .item2 { grid-area: menu; }
 .main { grid-area: main; }
@@ -18,17 +23,9 @@
 .grid-container > div {
   padding: 10px 0;
 }
-
-.navbar   {
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
-  margin: 0%;
+.card {
+  margin: 2%
 }
-
-.card  {
-  margin: 10px;
-  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
-}
-
 .upvote {
     display: inline-block;
     overflow: hidden;
