@@ -33,9 +33,9 @@
                         <blockquote class="blockquote ml-3 mb-0">
                             <p id='question'><%= question %></p>
                             <footer class="blockquote-footer"><cite title="Source Title"><%= username %></cite></footer>
-                        </blockquote>    
+                        </blockquote>
                     </div>
-                    <a id="reply" href="" class="btn btn-info float-right btn-sm" role="button">Reply</a>  
+                    <a id="reply" href="" class="btn btn-info float-right btn-sm" role="button">Reply</a>
                 </div>
             </div>
 
@@ -59,8 +59,8 @@
                                     <blockquote class="blockquote ml-3 mb-0">
                                         <p id='question'><%= post.post.answer %></p>
                                         <footer class="blockquote-footer"><cite title="Source Title"></cite></footer>
-                                    </blockquote>    
-                                </div>                                
+                                    </blockquote>
+                                </div>
                             </div>
                         </div>
 
@@ -71,8 +71,10 @@
             </div>
         </div>
     </div>
-        
-    <script src="/js/thread.js"></script>
+    <script src="/js/addQuesFE.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+    <script src="/js/question.js"></script>
     <% include partials/footer.ejs %>
 </body>
 </html>

@@ -23,8 +23,8 @@ router.post('/register', register);
 router.post('/home', home);
 
 
-router.get('/askquestion', function(req, res) { 
-    res.render('addQuesFE');
+router.get('/askquestion', function(req, res) {
+    res.render('addQues');
 })
 
 

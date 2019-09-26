@@ -16,6 +16,7 @@
         </div>
         <!--/.Navbar-->
         <div class="questions">
+            <% include partials/askQues.ejs %>
             <% questions.forEach((question) => { %>
                 <div id="qc" class="card bg-light border-primary w-100 ">
                     <div class="card-body">
@@ -26,14 +27,14 @@
                 </div>
             <% }) %>
         </div>
-        
+
 
         <div class="ask">
-            
+
         </div>
 
-        <div class="item2"></div>    
-        
+        <div class="item2"></div>
+
         <div class="item5"></div>
     </div>
     <script src="/js/home.js"></script>
