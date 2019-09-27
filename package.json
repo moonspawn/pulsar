@@ -19,7 +19,7 @@
   "homepage": "https://github.com/moonspawn/pulsar#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "ejs": "^2.6.2",
+    "ejs": "^2.7.1",
     "express": "^4.17.1",
     "express-session": "^1.16.2",
     "nodemon": "^1.19.2",
