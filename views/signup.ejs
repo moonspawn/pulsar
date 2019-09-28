@@ -3,62 +3,76 @@
     <head>
         <% include partials/header.ejs %>
         <link rel="stylesheet" href="/stylesheets/signup.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
         <title>Login</title>
     </head>
     <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-                    <div class="card card-signin my-5">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">User Regestration</h5>
-                            <form class="form-signup" method="POST" action="/register">
-
-                                <div class="form-label-group">
-                                    <label for="inputName">Name</label>
-                                    <div class="form-group row"> 
-                                        <div class="col-md-6" >
-                                            <input name="firstname" type="text" id="inputName" class="form-control" placeholder="First Name" required autofocus>
-                                        </div>
-                                        <div class="col-md-6" >
-                                            <input name="lastname" type="text" id="inputName" class="form-control" placeholder="Last Name" required autofocus>
-                                        </div>
-                                    </div>
-                                </div>
-                
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input name ='email' type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                                </div>
-                
-                                <div class="form-label-group">
-                                    <label for="inputConact">Contact</label>
-                                    <input name="contact" type="text" id="inputConact" pattern="^\d{10}$" class="form-control" placeholder="Contact" required >
-                                </div>
-                                <hr>
-                                <div class="form-label-group">
-                                    <label for="inputUsername">Username</label>
-                                    <input name="username" type="text" id="inputUsername" class="form-control" placeholder="Username" required>
-                                </div>
-
-                                <div class="form-label-group">
-                                    <label for="inputPassword">Password</label>  
-                                    <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                                </div>
-
-                                <div class="form-label-group">
-                                    <label for="inputPassword2">Repeat Password</label>  
-                                    <input name="password2" type="password" id="inputPassword2" class="form-control" placeholder="Repeat Password" required>
-                                </div>
-                                <span id='message'></span>
-                                <hr>
-                                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
-                            </form>
-                        </div>
+        <div class="signup-form">	
+            <form action="/register" method="post">
+                <h2>Create Account</h2>
+                <p class="lead">It's free and hardly takes more than 30 seconds.</p>
+                <div class="form-group">
+                    <label for="inputName"></label>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user "></i></span>
+                        <input type="text" class="form-control" id="inputName" name="firstname" placeholder="First Name" required="required">
+                    </div>
+                    <p></p>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input type="text" class="form-control" id="inputName" name="lastname" placeholder="Last Name" required="required">
                     </div>
                 </div>
-            </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <label for="exampleInputEmail1"></label>
+                        <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+                        <input type="email" class="form-control" name="email" id="exampleInputEmail1" placeholder="Email Address" required="required">
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <label for="inputConact"></label>
+                        <span class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="contact" id="inputConact" pattern="^\d{10}$" placeholder="Contact" required="required">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <label for="inputUsername"></label>
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input class="form-control" name="username" type="text" id="inputUsername" placeholder="User Name" required="required">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <label for="inputPassword"></label> 
+                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <label for="inputPassword2"></label> 
+                        <span class="input-group-addon">
+                            <i class="fa fa-lock"></i>
+                            <i class="fa fa-check"></i>
+                        </span>
+                        <input class="form-control" name="password2" type="password" id="inputPassword2" placeholder="Confirm Password" required="required">
+                    </div>
+                </div> 
+                <span id='message'></span>       
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block btn-lg">Sign Up</button>
+                </div>
+                <p class="small text-center">By clicking the Sign Up button, you agree to our <br><a href="#">Terms &amp; Conditions</a>, and <a href="#">Privacy Policy</a>.</p>
+            </form>
+            <div class="text-center">Already have an account? <a href="#">Login here</a>.</div>
         </div>
 
         <script src="/js/signup.js"></script>
