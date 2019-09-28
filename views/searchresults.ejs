@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% include partials/header.ejs %>
+    <title>Document</title>
+</head>
+<body>
+    <!--Navbar-->
+    <div class="header">
+        <% include partials/search.ejs %>
+    </div>
+    <!--/.Navbar-->
+
+    <div class="main">
+        <div class="questions">
+            <% include partials/askQues.ejs %>
+            <% searchresults.forEach((searchresult) => { %>
+                <div id="qc" class="card bg-light border-primary w-100 ">
+                    <div class="card-body">
+                        <p id="question" class="card-text"><%= searchresult.question %></p>
+                        <span class="badge badge-secondary"></span><br>
+                        <a id="view" href="" class="stretched-link float-right" role="button">view</a>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+    <script src="/js/searchFE.js"></script>
+    <script src="/js/addQuesFE.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+    <% include partials/footer.ejs %>
+</body>
+</html>

@@ -17,6 +17,7 @@
         </div>
         <!--/.Navbar-->
         <div class = "main">
+            <% include partials/askQues.ejs %>
             <form id='form' name='quesdetails' method="POST" action = '' >
 
                 <div class="form-group">
@@ -28,7 +29,8 @@
             </form>
         </div>
     </div>
-
+    
+    <script src="/js/addQuesFE.js"></script>
     <% include partials/footer.ejs %>
 </body>
 </html>

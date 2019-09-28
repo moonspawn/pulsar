@@ -11,7 +11,7 @@
                     <div class="card card-signin my-5">
                         <div class="card-body">
                             <h5 class="card-title text-center">User Login</h5>
-                            <form id="f" class="form-signin" method="POST" action="/home">
+                            <form id="f" class="form-signin" method="POST" action="/">
                                 <div class="form-label-group">
                                     <label for="inputUsername">Username</label>
                                     <input name="username" type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
@@ -26,6 +26,11 @@
                                     <input type="checkbox" class="custom-control-input" id="customCheck1">
                                     <label class="custom-control-label" for="customCheck1">Remember password</label>
                                 </div>
+                                <% if(authentication == false)   { %>
+                                    <div class="alert alert-danger" role="alert">
+                                        Incorrect Credentials
+                                    </div>
+                                <% } %>
                                 <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Log in</button>
                             </form>
                             <hr>

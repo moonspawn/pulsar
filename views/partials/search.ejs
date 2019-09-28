@@ -1,3 +1,6 @@
+<style>
+    .popover {width:70%;}
+</style>
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light rounded ">
     <a class="navbar-brand" href="#">Pulsar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,13 +12,16 @@
         <li class="nav-item active">
             <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-            <a class="btn btn-primary float-right btn-sm" href="/askquestion">Ask Question</a>
-        </li>
+        <button id="askbtn" type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">
+            Ask question
+        </button>
         </ul>
-        <form class="form-inline float-left my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="filter">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <form id="searchform" class="form-inline float-left my-2 my-lg-0">
+            <input id="search" class="form-control mr-sm-2" type="search" placeholder="filter">
+            <button id="searchbtn" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
+        <div hidden id="popover-content" >
+        </div>
+        
     </div>
 </nav>
