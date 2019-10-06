@@ -3,44 +3,44 @@ let db = new sqlite3.Database('./db/authentic.db');
 
 module.exports = async function(req, res) {
 
-    const question = req.params.ques;
-    const posts = []
-    
+    const question1 = req.params.ques;
+    const posts = [];
 
 
-    await db.get(`SELECT * FROM threads WHERE question = "${question}"`, (err, row) => {
-        db.get(`SELECT userid FROM userthread WHERE threadid = "${row.threadid}"`,(err, userid) => {
-            db.get(`SELECT username FROM users WHERE userid = "${userid.userid}"`, (err, username) =>    {
-                untry(row, username, (row, username, posts) => {
-                    jason = {"question": question,
-                    "username": username,
-                    "tags": row.tags,
-                    "upvotes": row.upvotes,
-                    "downvotes": row.downvotes,
-                    "posts":posts}
-                    res.render("question", jason)
-                })
-            })
-        })
+    db.get(`SELECT threads.tags,
+                threads.threadid,
+                threads.upvotes,
+                threads.downvotes,
+                users.username
+            FROM threads
+            NATURAL JOIN userthread
+            NATURAL JOIN users
+            WHERE threads.question = "${question1}";`, (err, row) => {
+                console.log(row);
+                db.all(`SELECT posts.* 
+                        FROM posts
+                        NATURAL JOIN threadpost
+                        WHERE threadpost.threadid = "${row.threadid}"`, (err, rows) =>   {
+                            console.log(rows)
+                            if(rows.length != 0)    {
+                                rows.forEach((row)  => {
+                                    posts.push({"answer":row.answer,
+                                                "upvotes":row.pupvotes,
+                                                "downvotes":row.pdownvotes})
+                                })
+
+                            }
+                            
+                            if(posts.length == rows.length || posts.lenght === 0) {
+                                res.render('question', {"question": question1,
+                                                        "username": row.username,
+                                                        "upvotes":row.upvotes,
+                                                        "downvotes":row.downvotes,
+                                                        "posts": posts}
+                                )
+                            }
+                        })
+
     })
-
-    
-    function untry(row, username, callback)  {
-        db.all(`SELECT postid FROM threadpost WHERE threadid="${row.threadid}"`, (err, postids) =>   {
-            if(postids.length > 0) {
-                postids.forEach((postid) =>   {
-                    db.get(`SELECT * FROM posts WHERE postid = "${postid.postid}"`, (err, post) =>  {
-                        posts.push({"post": post})
-                        if(postids.length === posts.length)    {
-                            callback(row, username.username, posts)
-                        }
-                    })
-                })
-            }
-            else    {
-                callback(row, username.username)
-            }
-        })
-    }
     
 }

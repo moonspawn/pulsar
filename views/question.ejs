@@ -49,16 +49,16 @@
                                 <div class="row">
                                     <div class="votes float-left">
                                         <div class='row'>
-                                            <p id='upvotes'><%= post.post.upvotes %></p>
+                                            <p id='upvotes'><%= post.upvotes %></p>
                                             <span class="upvote ml-1 mr-3 mt-2 mb-0"> </span>
                                         </div>
                                         <div class='row'>
-                                            <p id='downvotes'><%= post.post.downvotes %></p>
+                                            <p id='downvotes'><%= post.downvotes %></p>
                                             <span class="downvote ml-1 mr-3 mt-2"> </span>
                                         </div>
                                     </div>
                                     <blockquote class="blockquote ml-3 mb-0">
-                                        <p id='question'><%= post.post.answer %></p>
+                                        <p id='question'><%= post.answer %></p>
                                         <footer class="blockquote-footer"><cite title="Source Title"></cite></footer>
                                     </blockquote>
                                 </div>
@@ -73,8 +73,13 @@
         </div>
     </div>
     
+    <script src="/js/hideask.js"></script>
+    <script src="/js/searchFE.js"></script>
     <script src="/js/addQuesFE.js"></script>
     <script src="/js/question.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+    
     <% include partials/footer.ejs %>
 </body>
 </html>

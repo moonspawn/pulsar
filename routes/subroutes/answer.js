@@ -9,11 +9,11 @@ module.exports = (req, res) =>  {
     const postid = uuid()
     console.log(question, answer, username);
 
-    db.run("CREATE TABLE IF NOT EXISTS posts(postid, answer, upvotes, downvotes)")
+    db.run("CREATE TABLE IF NOT EXISTS posts(postid, answer, pupvotes, pdownvotes)")
     db.run("CREATE TABLE IF NOT EXISTS userpost(userid, postid)")
     db.run("CREATE TABLE IF NOT EXISTS threadpost(threadid, postid)")
 
-    db.run(`INSERT INTO posts(postid, answer, upvotes, downvotes) VALUES ("${postid}", "${answer}", "0", "0")`)
+    db.run(`INSERT INTO posts(postid, answer, pupvotes, pdownvotes) VALUES ("${postid}", "${answer}", "0", "0")`)
 
     db.get(`SELECT threadid FROM threads WHERE question = "${question}"`, (err, threadid) => {
         console.log(err)

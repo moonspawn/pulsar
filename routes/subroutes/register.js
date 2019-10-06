@@ -13,5 +13,5 @@ module.exports = function(req, res) {
     const userid = uuid()
 
     db.run(`INSERT INTO users (userid, username, password, email, name_first, name_last, contact) VALUES ( "${userid}", "${username}", "${password}" , "${email}" , "${firstname}" , "${lastname}" , "${contact}" )`)
-    res.render('login')
+    res.render('login', {authentication: true})
 }

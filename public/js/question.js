@@ -1,4 +1,4 @@
-var path = '/' + document.getElementById('question').innerHTML
+var path = '/question/' + document.getElementById('question').innerHTML
 
 for (const btn of document.querySelectorAll('.upvote')) {
   btn.addEventListener('click', event => {

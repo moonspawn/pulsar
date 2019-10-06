@@ -31,7 +31,7 @@ $(document).ready(function()    {
                                                 <p id="question" class="card-text">${searchresult.question}</p>
                                                 <a id="view" href="/question/${searchresult.question}" class="stretched-link float-right" role="button">view</a>
                                             </div>
-                                        </div> `)
+                                        </div>`)
 
         })
     }

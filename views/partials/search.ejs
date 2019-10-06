@@ -1,22 +1,30 @@
 <style>
     .popover {width:70%;}
+    .navbar-default {
+        background-color: #21062f;
+        border-color: #21062f;
+    }
 </style>
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light rounded ">
-    <a class="navbar-brand" href="#">Pulsar</a>
+<nav class="navbar navbar-default fixed-top navbar-expand-lg rounded m-0 p-0">
+    
+    <a class="navbar-brand" href="#"><img src="/images/pulsar_logo.jpg" alt="Brand Logo"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <div class="collapse navbar-collapse ml-0 pl-0" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item active">
+        <li class="nav-item active mr-2">
             <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
         </li>
-        <button id="askbtn" type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">
-            Ask question
-        </button>
+        <div id="ask-div">
+            <button id="askbtn" type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">
+                Ask question
+            </button>
+        </div>
+        
         </ul>
-        <form id="searchform" class="form-inline float-left my-2 my-lg-0">
+        <form id="searchform" class="form-inline float-left m-2 my-lg-0">
             <input id="search" class="form-control mr-sm-2" type="search" placeholder="filter">
             <button id="searchbtn" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
