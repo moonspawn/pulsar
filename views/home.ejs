@@ -16,7 +16,7 @@
         </div>
         <!--/.Navbar-->.
         
-        <div class="questions">
+        <div class="mt-4 questions">
             <% include partials/askQues.ejs %>
             <% questions.forEach((question) => { %>
                 <div id="qc" class="card bg-light border-primary w-100 ">
@@ -28,7 +28,9 @@
                 </div>
             <% }) %>
         </div>
-        <div class="item2"></div>
+        <div class="menu border border-primary rounded mt-5">
+            <% include partials/menu.ejs %>
+        </div>
 
         <div class="item5"></div>
     </div>

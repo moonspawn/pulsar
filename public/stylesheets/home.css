@@ -1,6 +1,7 @@
 
 .header { grid-area: header; }
-.item2 { grid-area: menu; }
+.menu { grid-area: menu; 
+        background: white}
 .questions { grid-area: main; }
 .askbtn { grid-area: right; }
 .item5 { grid-area: footer; }
