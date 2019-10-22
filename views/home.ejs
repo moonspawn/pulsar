@@ -21,7 +21,7 @@
             <% questions.forEach((question) => { %>
                 <div id="qc" class="card w-100" style="backgroung-color: #e3e7f1; box-shadow: 7px 7px 0px 0px black">
                     <div class="card-body">
-                        <p id="question" class="card-text"><%= question.question %> ?</p>
+                        <p id="question" class="card-text"><%= question.question %></p>
                         <span class="badge badge-secondary"><%= question.tags %></span><br>
                         <a id="view" href="" class="stretched-link float-right" role="button"></a>
                     </div>
@@ -31,6 +31,7 @@
         <% include partials/menu.ejs %>
         <div class="item5"></div>
     </div>
+
     <script src="/js/home.js"></script>
     <script src="/js/searchFE.js"></script>
     <script src="/js/addQuesFE.js"></script>

@@ -2,7 +2,7 @@
 .header { grid-area: header; }
 .menu { grid-area: menu; background: white }
 .questions { grid-area: main; }
-.askbtn { grid-area: right; }
+.ad { grid-area: right; }
 .item5 { grid-area: footer; }
 
 
