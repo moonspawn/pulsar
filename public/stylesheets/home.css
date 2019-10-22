@@ -1,7 +1,6 @@
 
 .header { grid-area: header; }
-.menu { grid-area: menu; 
-        background: white}
+.menu { grid-area: menu; background: white }
 .questions { grid-area: main; }
 .askbtn { grid-area: right; }
 .item5 { grid-area: footer; }
@@ -22,5 +21,11 @@
 }
 
 .card {
-  margin: 2%
+  margin: 2%;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }

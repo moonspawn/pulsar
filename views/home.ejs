@@ -8,30 +8,27 @@
     <% include partials/header.ejs %>
     <title>Document</title>
 </head>
-<body class="body">
+<body class="body" style="background-color: #c6cbef">
     <div class="grid-container">
         <!--Navbar-->
         <div class="header row ">
             <% include partials/search.ejs %>
         </div>
         <!--/.Navbar-->.
-        
+
         <div class="mt-4 questions">
             <% include partials/askQues.ejs %>
             <% questions.forEach((question) => { %>
-                <div id="qc" class="card bg-light border-primary w-100 ">
+                <div id="qc" class="card w-100" style="backgroung-color: #e3e7f1; box-shadow: 7px 7px 0px 0px black">
                     <div class="card-body">
                         <p id="question" class="card-text"><%= question.question %></p>
                         <span class="badge badge-secondary"><%= question.tags %></span><br>
-                        <a id="view" href="" class="stretched-link float-right" role="button">view</a>
+                        <a id="view" href="" class="stretched-link float-right" role="button"></a>
                     </div>
                 </div>
             <% }) %>
         </div>
-        <div class="menu border border-primary rounded mt-5">
-            <% include partials/menu.ejs %>
-        </div>
-
+        <% include partials/menu.ejs %>
         <div class="item5"></div>
     </div>
     <script src="/js/home.js"></script>
