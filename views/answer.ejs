@@ -8,28 +8,28 @@
     <% include partials/header.ejs %>
     <title>Document</title>
 </head>
-<body>
-    
+<body class="body">
+
     <div class="grid-container">
         <!--Navbar-->
         <div class="header">
             <% include partials/search.ejs %>
         </div>
         <!--/.Navbar-->
-        <div class = "main">
+        <div class = "main py-5">
             <% include partials/askQues.ejs %>
             <form id='form' name='quesdetails' method="POST" action = '' >
 
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">write your Answer here</label>
-                    <textarea name="answer" class="form-control" id="exampleFormControlTextarea1" rows="6" ></textarea>
+                    <label for="exampleFormControlTextarea1"><strong>write your Answer here</strong></label>
+                    <textarea name="answer" class="form-control" id="exampleFormControlTextarea1" rows="12" style="width: 80%; box-shadow: 7px 7px 1px 1px black;" ></textarea>
                 </div><br>
-        
+
                 <button class="btn btn-primary text-uppercase btn-sm" type="submit">Submit</button>
             </form>
         </div>
     </div>
-    
+
     <script src="/js/hideask.js"></script>
     <% include partials/footer.ejs %>
 </body>

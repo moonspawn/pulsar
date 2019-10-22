@@ -10,17 +10,14 @@
 .header { grid-area: header; }
 .item2 { grid-area: menu; }
 .main { grid-area: main; }
-.ask { grid-area: right; }
 .item5 { grid-area: footer; }
 
 .grid-container {
   display: grid;
   grid-template-areas:
     'header header header header header header'
-    'main main main main main right'
+    'main main main main main main'
     'menu footer footer footer footer footer';
-  grid-gap: 10px;
-  padding: 10px;
 }
 
 .grid-container > div {
@@ -32,14 +29,14 @@
 .upvote {
     display: inline-block;
     overflow: hidden;
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-bottom: 10px solid gray;
-} 
-  
-  
+}
+
+
 .upvote.on {
   border-bottom: 10px solid black;
 }
@@ -47,17 +44,19 @@
 .downvote {
   display: inline-block;
   overflow: hidden;
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-top: 10px solid grey;
-} 
+}
 
-  
+.card  {
+  box-shadow: 7px 7px 1px 1px black;
+}
+
 .downvote.on {
   border-top: 10px solid black
 }
 
-  
-  
+

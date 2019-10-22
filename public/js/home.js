@@ -1,7 +1,7 @@
 
 
 $(document).ready(function(){
-    
+
     const questions = document.querySelectorAll('#qc');
     questions.forEach((question) =>  {
         let path = "/question/" + question.querySelector('#question').innerHTML;
