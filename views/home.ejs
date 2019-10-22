@@ -15,13 +15,13 @@
             <% include partials/search.ejs %>
         </div>
         <!--/.Navbar-->.
-        
+
         <div class="mt-4 questions">
             <% include partials/askQues.ejs %>
             <% questions.forEach((question) => { %>
                 <div id="qc" class="card bg-light border-primary w-100 ">
                     <div class="card-body">
-                        <p id="question" class="card-text"><%= question.question %></p>
+                        <p id="question" class="card-text"><%= question.question %> ?</p>
                         <span class="badge badge-secondary"><%= question.tags %></span><br>
                         <a id="view" href="" class="stretched-link float-right" role="button">view</a>
                     </div>

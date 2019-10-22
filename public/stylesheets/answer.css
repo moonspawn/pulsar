@@ -1,5 +1,5 @@
 .body {
-  background-color: #E1E8ED;
+  background-color: #94ceca;
   overflow:auto;
 }
 .header { grid-area: header; }
@@ -12,10 +12,8 @@
   display: grid;
   grid-template-areas:
     'header header header header header header'
-    'main main main main main right'
+    'menu main main main right right'
     'menu footer footer footer footer footer';
-  grid-gap: 10px;
-  padding: 10px;
 }
 
 .grid-container > div {
@@ -24,4 +22,8 @@
 
 .card {
   margin: 2%
+}
+
+.main   {
+  background-color: #94ceca;
 }
