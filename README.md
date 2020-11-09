@@ -1,5 +1,4 @@
-# pulsar
-This is Pulsar.
+# This is Pulsar.
 ------
 A Very Rudimentary Opionion Forum
 (made for school project by @txtr, @shaikhalid, and @AnupJoseph)
